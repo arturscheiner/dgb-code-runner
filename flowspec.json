@@ -3,12 +3,12 @@
     {
       "name": "json-generator-connector",
       "type": "connector",
-      "stepName": "Python B64 Code",
+      "stepName": "Go B64 Code",
       "params": {
-        "json": "{\n    \"b64code\": \"CmltcG9ydCBqc29uCgpwZXJzb25fc3RyaW5nID0gJ3sibmFtZSI6ICJCb2IiLCAibGFuZ3VhZ2VzIjogIkVuZ2xpc2giLCAibnVtYmVycyI6IFsyLCAxLjYsIG51bGxdfScKCiMgR2V0dGluZyBkaWN0aW9uYXJ5CnBlcnNvbl9kaWN0ID0ganNvbi5sb2FkcyhwZXJzb25fc3RyaW5nKQoKIyBQcmV0dHkgUHJpbnRpbmcgSlNPTiBzdHJpbmcgYmFjawpwcmludChqc29uLmR1bXBzKHBlcnNvbl9kaWN0LCBpbmRlbnQgPSA0LCBzb3J0X2tleXM9VHJ1ZSkpCg==\",\n    \"language\": \"python\",\n    \"args\": \"\",\n    \"ext\": \"py\"\n}",
+        "json": "{\n    \"b64code\": \"cGFja2FnZSBtYWluCgppbXBvcnQgKAoJImVuY29kaW5nL2pzb24iCgkiZm10IgopCgovLyBUaGUgc2FtZSBqc29uIHRhZ3Mgd2lsbCBiZSB1c2VkIHRvIGVuY29kZSBkYXRhIGludG8gSlNPTgp0eXBlIEJpcmQgc3RydWN0IHsKCVNwZWNpZXMgICAgIHN0cmluZyBganNvbjoiYmlyZFR5cGUiYAoJRGVzY3JpcHRpb24gc3RyaW5nIGBqc29uOiJ3aGF0IGl0IGRvZXMiYAp9CgpmdW5jIG1haW4oKSB7CglwaWdlb24gOj0gJkJpcmR7CgkJU3BlY2llczogICAgICJQaWdlb24iLAoJCURlc2NyaXB0aW9uOiAibGlrZXMgdG8gZWF0IHNlZWQiLAoJfQoKCS8vIHdlIGNhbiB1c2UgdGhlIGpzb24uTWFyc2hhbCBmdW5jdGlvbiB0bwoJLy8gZW5jb2RlIHRoZSBwaWdlb24gdmFyaWFibGUgdG8gYSBKU09OIHN0cmluZwoJZGF0YSwgXyA6PSBqc29uLk1hcnNoYWwocGlnZW9uKQoJLy8gZGF0YSBpcyB0aGUgSlNPTiBzdHJpbmcgcmVwcmVzZW50ZWQgYXMgYnl0ZXMKCS8vIHRoZSBzZWNvbmQgcGFyYW1ldGVyIGhlcmUgaXMgdGhlIGVycm9yLCB3aGljaCB3ZQoJLy8gYXJlIGlnbm9yaW5nIGZvciBub3csIGJ1dCB3aGljaCB5b3Ugc2hvdWxkIGlkZWFsbHkgaGFuZGxlCgkvLyBpbiBwcm9kdWN0aW9uIGdyYWRlIGNvZGUKCgkvLyB0byBwcmludCB0aGUgZGF0YSwgd2UgY2FuIHR5cGVjYXN0IGl0IHRvIGEgc3RyaW5nCglmbXQuUHJpbnRsbihzdHJpbmcoZGF0YSkpCn0=\",\n    \"language\": \"go\",\n    \"args\": \"run\",\n    \"ext\": \"go\"\n}",
         "failOnError": false
       },
-      "id": "2de128cb-2385-44d1-b0bc-7a38fcb33e14",
+      "id": "40681e35-71c3-426e-8cca-5af86cb532d8",
       "__documentation__": ""
     },
     {
