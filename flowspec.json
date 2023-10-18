@@ -1,0 +1,50 @@
+{
+  "start": [
+    {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "Python B64 Code",
+      "params": {
+        "json": "{\n    \"b64code\": \"CmltcG9ydCBqc29uCgpwZXJzb25fc3RyaW5nID0gJ3sibmFtZSI6ICJCb2IiLCAibGFuZ3VhZ2VzIjogIkVuZ2xpc2giLCAibnVtYmVycyI6IFsyLCAxLjYsIG51bGxdfScKCiMgR2V0dGluZyBkaWN0aW9uYXJ5CnBlcnNvbl9kaWN0ID0ganNvbi5sb2FkcyhwZXJzb25fc3RyaW5nKQoKIyBQcmV0dHkgUHJpbnRpbmcgSlNPTiBzdHJpbmcgYmFjawpwcmludChqc29uLmR1bXBzKHBlcnNvbl9kaWN0LCBpbmRlbnQgPSA0LCBzb3J0X2tleXM9VHJ1ZSkpCg==\",\n    \"language\": \"python\",\n    \"args\": \"\",\n    \"ext\": \"py\"\n}",
+        "failOnError": false
+      },
+      "id": "2de128cb-2385-44d1-b0bc-7a38fcb33e14",
+      "__documentation__": ""
+    },
+    {
+      "type": "connector",
+      "name": "ssh-remote-command-connector",
+      "stepName": "SSH Remote Command",
+      "accountLabels": {
+        "sshAccount": "ssh-ahs-coderunner-key"
+      },
+      "params": {
+        "username": "coderunner",
+        "host": "lab.oobly.com.br",
+        "port": "31022",
+        "environmentVariablesRawMode": false,
+        "environmentVariables": "[]",
+        "command": "echo \"{{ message.b64code }}\" > /tmp/code.b64\necho \"$(base64 -d /tmp/code.b64)\" > ~/code.{{ message.ext }}\nLANGUAGE=\"{{ message.language }}\"\n$(echo $LANGUAGE) {{ message.args }} code.{{ message.ext }}",
+        "ignoreOutput": false,
+        "stdoutAsFile": false,
+        "stderrAsFile": false,
+        "connectTimeout": 30000,
+        "serverAliveInterval": 30000,
+        "failOnError": false
+      },
+      "id": "cdff25bc-8da9-4f46-a12f-7d2256dd2101",
+      "__documentation__": ""
+    },
+    {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "JSON Generator",
+      "params": {
+        "json": "{{ TOJSON(message.stdout) }}",
+        "failOnError": false
+      },
+      "id": "0a4e190f-6882-41c5-b03e-271d3cd302f5",
+      "__documentation__": ""
+    }
+  ]
+}
