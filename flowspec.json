@@ -29,7 +29,7 @@
         "sshAccount": "ssh-ahs-coderunner-key"
       },
       "params": {
-        "username": "coderunner",
+        "username": "{{global.ahs-ssh-coderunner}}",
         "host": "{{global.ahs-ssh-hostname}}",
         "port": "{{global.ahs-ssh-port}}",
         "environmentVariablesRawMode": false,
@@ -75,7 +75,7 @@
         "sshAccount": "ssh-ahs-coderunner-key"
       },
       "params": {
-        "username": "coderunner",
+        "username": "{{global.ahs-ssh-coderunner}}",
         "host": "{{global.ahs-ssh-hostname}}",
         "port": "{{global.ahs-ssh-port}}",
         "environmentVariablesRawMode": false,
