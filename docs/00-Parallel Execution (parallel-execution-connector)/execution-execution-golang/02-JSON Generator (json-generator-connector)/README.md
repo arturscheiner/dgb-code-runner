@@ -10,7 +10,7 @@ Check this component official documentation: [json-generator-connector](https://
 ## Component Configuration Details
 ### Documentation
 
-
+O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
 
 ### Parameters
 
@@ -31,5 +31,5 @@ false
 ## RAW Object
 
 ```
-{"name":"json-generator-connector","type":"connector","stepName":"JSON Generator","params":{"json":"{{ TOJSON(message.stdout) }}","failOnError":false},"id":"0a4e190f-6882-41c5-b03e-271d3cd302f5","__documentation__":""}
+{"name":"json-generator-connector","type":"connector","stepName":"JSON Generator","params":{"json":"{{ TOJSON(message.stdout) }}","failOnError":false},"id":"b294b6c5-a3f3-4b03-bee9-a1b795c71458"}
 ```

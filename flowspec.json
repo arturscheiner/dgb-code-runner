@@ -1,20 +1,30 @@
 {
   "start": [
     {
+      "type": "connector",
+      "name": "parallel-execution-connector",
+      "stepName": "Parallel Execution",
+      "params": {
+        "parallelExecutions": "[{\"description\":\"execution-python\",\"executionId\":\"execution-python\",\"target\":\"3632d839-171a-46ab-b229-fb51d86729dc:aaa83553-76b5-4a4a-b050-c82fab0b10c9\"},{\"description\":\"execution-golang\",\"executionId\":\"execution-golang\",\"target\":\"3632d839-171a-46ab-b229-fb51d86729dc:9459e133-b96b-4f41-890e-da9bf9221345\"}]"
+      },
+      "id": "3632d839-171a-46ab-b229-fb51d86729dc"
+    }
+  ],
+  "3632d839-171a-46ab-b229-fb51d86729dc:aaa83553-76b5-4a4a-b050-c82fab0b10c9": [
+    {
       "name": "json-generator-connector",
       "type": "connector",
-      "stepName": "Go B64 Code",
+      "stepName": "Python B64 Code",
       "params": {
-        "json": "{\n    \"b64code\": \"cGFja2FnZSBtYWluCgppbXBvcnQgKAoJImVuY29kaW5nL2pzb24iCgkiZm10IgopCgovLyBUaGUgc2FtZSBqc29uIHRhZ3Mgd2lsbCBiZSB1c2VkIHRvIGVuY29kZSBkYXRhIGludG8gSlNPTgp0eXBlIEJpcmQgc3RydWN0IHsKCVNwZWNpZXMgICAgIHN0cmluZyBganNvbjoiYmlyZFR5cGUiYAoJRGVzY3JpcHRpb24gc3RyaW5nIGBqc29uOiJ3aGF0IGl0IGRvZXMiYAp9CgpmdW5jIG1haW4oKSB7CglwaWdlb24gOj0gJkJpcmR7CgkJU3BlY2llczogICAgICJQaWdlb24iLAoJCURlc2NyaXB0aW9uOiAibGlrZXMgdG8gZWF0IHNlZWQiLAoJfQoKCS8vIHdlIGNhbiB1c2UgdGhlIGpzb24uTWFyc2hhbCBmdW5jdGlvbiB0bwoJLy8gZW5jb2RlIHRoZSBwaWdlb24gdmFyaWFibGUgdG8gYSBKU09OIHN0cmluZwoJZGF0YSwgXyA6PSBqc29uLk1hcnNoYWwocGlnZW9uKQoJLy8gZGF0YSBpcyB0aGUgSlNPTiBzdHJpbmcgcmVwcmVzZW50ZWQgYXMgYnl0ZXMKCS8vIHRoZSBzZWNvbmQgcGFyYW1ldGVyIGhlcmUgaXMgdGhlIGVycm9yLCB3aGljaCB3ZQoJLy8gYXJlIGlnbm9yaW5nIGZvciBub3csIGJ1dCB3aGljaCB5b3Ugc2hvdWxkIGlkZWFsbHkgaGFuZGxlCgkvLyBpbiBwcm9kdWN0aW9uIGdyYWRlIGNvZGUKCgkvLyB0byBwcmludCB0aGUgZGF0YSwgd2UgY2FuIHR5cGVjYXN0IGl0IHRvIGEgc3RyaW5nCglmbXQuUHJpbnRsbihzdHJpbmcoZGF0YSkpCn0=\",\n    \"language\": \"go\",\n    \"args\": \"run\",\n    \"ext\": \"go\"\n}",
+        "json": "{\n    \"b64code\": \"aW1wb3J0IGpzb24KCiMgc29tZSBKU09OOgp4ID0gJ3sibWVzc2FnZSI6IkhlbGxvIFdvcmxkISJ9JwoKIyBwcmludCB0aGUgSlNPTiBtZXNzYWdlOgpwcmludCh4KQo=\",\n    \"language\": \"python3\",\n    \"args\": \"\",\n    \"ext\": \"py\"\n}",
         "failOnError": false
       },
-      "id": "40681e35-71c3-426e-8cca-5af86cb532d8",
-      "__documentation__": ""
+      "id": "aaa83553-76b5-4a4a-b050-c82fab0b10c9"
     },
     {
       "type": "connector",
       "name": "ssh-remote-command-connector",
-      "stepName": "SSH Remote Command",
+      "stepName": "Execute Python Command",
       "accountLabels": {
         "sshAccount": "ssh-ahs-coderunner-key"
       },
@@ -32,8 +42,7 @@
         "serverAliveInterval": 30000,
         "failOnError": false
       },
-      "id": "cdff25bc-8da9-4f46-a12f-7d2256dd2101",
-      "__documentation__": ""
+      "id": "f72acc44-fca4-46f1-8fd9-128e351b8b92"
     },
     {
       "name": "json-generator-connector",
@@ -43,8 +52,52 @@
         "json": "{{ TOJSON(message.stdout) }}",
         "failOnError": false
       },
-      "id": "0a4e190f-6882-41c5-b03e-271d3cd302f5",
-      "__documentation__": ""
+      "id": "9e94fb2e-767f-4234-97a6-3db668f89720"
+    }
+  ],
+  "3632d839-171a-46ab-b229-fb51d86729dc:9459e133-b96b-4f41-890e-da9bf9221345": [
+    {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "Go B64 Code",
+      "params": {
+        "json": "{\n    \"b64code\": \"cGFja2FnZSBtYWluCmltcG9ydCAoCiAgICAiZm10IgogICAgImVuY29kaW5nL2pzb24iCikKdHlwZSBPdXRwdXQgc3RydWN0IHsKCU1lc3NhZ2Ugc3RyaW5nIGBqc29uOiJtZXNzYWdlImAKfQpmdW5jIG1haW4oKSB7CiAgICBteU91dHB1dCA6PSBPdXRwdXR7IkhlbGxvIFdvcmxkISJ9CiAgICBieXRlcywgXyA6PSBqc29uLk1hcnNoYWwobXlPdXRwdXQpCiAgICBmbXQuUHJpbnRsbihzdHJpbmcoYnl0ZXMpKQp9Cg==\",\n    \"language\": \"go\",\n    \"args\": \"run\",\n    \"ext\": \"go\"\n}",
+        "failOnError": false
+      },
+      "id": "9459e133-b96b-4f41-890e-da9bf9221345"
+    },
+    {
+      "type": "connector",
+      "name": "ssh-remote-command-connector",
+      "stepName": "Execute Go Command",
+      "accountLabels": {
+        "sshAccount": "ssh-ahs-coderunner-key"
+      },
+      "params": {
+        "username": "coderunner",
+        "host": "lab.oobly.com.br",
+        "port": "31022",
+        "environmentVariablesRawMode": false,
+        "environmentVariables": "[]",
+        "command": "echo \"{{ message.b64code }}\" > /tmp/code.b64\necho \"$(base64 -d /tmp/code.b64)\" > ~/code.{{ message.ext }}\nLANGUAGE=\"{{ message.language }}\"\n$(echo $LANGUAGE) {{ message.args }} code.{{ message.ext }}",
+        "ignoreOutput": false,
+        "stdoutAsFile": false,
+        "stderrAsFile": false,
+        "connectTimeout": 30000,
+        "serverAliveInterval": 30000,
+        "failOnError": false
+      },
+      "id": "5107b62f-d787-407a-ba68-55114685c0d1"
+    },
+    {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "JSON Generator",
+      "params": {
+        "json": "{{ TOJSON(message.stdout) }}",
+        "failOnError": false
+      },
+      "id": "b294b6c5-a3f3-4b03-bee9-a1b795c71458"
     }
   ]
 }
