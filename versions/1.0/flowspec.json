@@ -30,8 +30,8 @@
       },
       "params": {
         "username": "coderunner",
-        "host": "lab.oobly.com.br",
-        "port": "31022",
+        "host": "{{global.ahs-ssh-hostname}}",
+        "port": "{{global.ahs-ssh-port}}",
         "environmentVariablesRawMode": false,
         "environmentVariables": "[]",
         "command": "echo \"{{ message.b64code }}\" > /tmp/code.b64\necho \"$(base64 -d /tmp/code.b64)\" > ~/code.{{ message.ext }}\nLANGUAGE=\"{{ message.language }}\"\n$(echo $LANGUAGE) {{ message.args }} code.{{ message.ext }}",
@@ -42,7 +42,8 @@
         "serverAliveInterval": 30000,
         "failOnError": false
       },
-      "id": "f72acc44-fca4-46f1-8fd9-128e351b8b92"
+      "id": "f72acc44-fca4-46f1-8fd9-128e351b8b92",
+      "__documentation__": ""
     },
     {
       "name": "json-generator-connector",
@@ -75,8 +76,8 @@
       },
       "params": {
         "username": "coderunner",
-        "host": "lab.oobly.com.br",
-        "port": "31022",
+        "host": "{{global.ahs-ssh-hostname}}",
+        "port": "{{global.ahs-ssh-port}}",
         "environmentVariablesRawMode": false,
         "environmentVariables": "[]",
         "command": "echo \"{{ message.b64code }}\" > /tmp/code.b64\necho \"$(base64 -d /tmp/code.b64)\" > ~/code.{{ message.ext }}\nLANGUAGE=\"{{ message.language }}\"\n$(echo $LANGUAGE) {{ message.args }} code.{{ message.ext }}",
@@ -87,7 +88,8 @@
         "serverAliveInterval": 30000,
         "failOnError": false
       },
-      "id": "5107b62f-d787-407a-ba68-55114685c0d1"
+      "id": "5107b62f-d787-407a-ba68-55114685c0d1",
+      "__documentation__": ""
     },
     {
       "name": "json-generator-connector",
