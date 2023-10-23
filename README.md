@@ -1,14 +1,13 @@
 ## This is the pipeline dgb-code-runner README:
 ## This is the pipeline components tree:
 ```bash
-└── 00-Parallel Execution (parallel-execution-connector)
-    ├── execution-execution-python
-    │   ├── 00-Python B64 Code (json-generator-connector)
-    │   ├── 01-Execute Python Command (ssh-remote-command-connector)
-    │   └── 02-JSON Generator (json-generator-connector)
-    └── execution-execution-golang
-        ├── 00-Go B64 Code (json-generator-connector)
-        ├── 01-Execute Go Command (ssh-remote-command-connector)
-        └── 02-JSON Generator (json-generator-connector)
+├── 00-git control and commit message used by dgb-gitsync (capsule-v1-demo-devops-commit-message-3.0)
+└── 01-execute code on external host in parallel (parallel-execution-connector)
+    ├── execution-execute-python-code
+    │   ├── 00-log info on executing python code (log-connector)
+    │   └── 01-process a python hard-code on external host (capsule-v1-demo-demo-coderunner-2.0)
+    └── execution-execute-go-code
+        ├── 00-log info on executing go code (log-connector)
+        └── 01-process a go hard-code on an external host (capsule-v1-demo-demo-coderunner-2.0)
 
 ```
