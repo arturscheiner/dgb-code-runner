@@ -1,4 +1,4 @@
-# Step Name -> log info on executing python code
+# Step Name -> log info on executing go code
 ## Component Denominator -> log-connector
 
 ## Component Description
@@ -10,7 +10,7 @@ Check this component official documentation: [log-connector](https://docs.digibe
 ## Component Configuration Details
 ### Documentation
 
-
+O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
 
 ### Parameters
 
@@ -28,5 +28,5 @@ Info processing message {{ message.$ }}
 ## RAW Object
 
 ```
-{"type":"connector","name":"log-connector","stepName":"log info on executing python code","params":{"logLevel":"INFO","message":"Info processing message {{ message.$ }}"},"id":"bf7a95d7-0244-4a7e-9bbd-1150d1bba33c","__documentation__":""}
+{"type":"connector","name":"log-connector","stepName":"log info on executing go code","params":{"logLevel":"INFO","message":"Info processing message {{ message.$ }}"},"id":"4cfc6b20-3899-46d3-ad03-4aaf08926a8c"}
 ```
